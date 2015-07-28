@@ -1,0 +1,225 @@
+project nil "beamtime preperation OLIS S1445" "1.0" 2015-07-29 +280d {
+}
+shift p1 "Preperation" {
+workinghours mon - fri 8:00 - 20:00
+}
+
+shift sl1 "shift leader" {
+workinghours mon - sun 0:00 - 9:00, 21:00 - 24:00
+}
+
+shift sl2 "backup morning" {
+workinghours mon - sun 7:00 - 15:00
+}
+
+shift sl3 "backup afternoon" {
+workinghours mon - sun 15:00 - 23:00
+}
+resource titans "TITANs" {
+  limits { dailymax 12h }
+  workinghours mon - fri 8:00 - 20:00
+  resource ag "Aaron" {
+  }
+  resource af "Andrew" {
+  }
+  resource aak "Ania" {
+    shifts p1 2014-11-07 - 2014-11-18
+  }
+  resource al "Annika" {
+  }
+  resource bb "Brad" {
+  }
+  resource bk "Brian" {
+  }
+  resource dl "Dan" {
+  }
+  resource ds "Devin" {
+  }
+  resource el "Erich" {
+    shifts p1 2014-11-07 - 2014-11-18
+  }
+  resource jb "Jeff" {
+  }
+  resource je "Julia" {
+  }
+  resource kl "Kyle" {
+  }
+  resource rk "Renee" {
+  }
+  resource rs "Ruben" {
+  }
+  resource uc "Usman" {
+  }
+}
+resource table "table of people" {
+}
+task mpet_prep "MPET prep." {
+  task solve "solve MPET ppg issue" {
+    purge allocate
+    allocate ag,je
+    duration 1d
+  }
+  task fine "fine tune beam from EBIT" {
+    depends !solve, !!ebit_prep.charge
+    purge allocate
+    allocate rs,rk,je,ag
+    duration 5d
+  }
+  task rf "RF balancing" {
+    depends !fine
+    purge allocate
+    allocate ag,je
+    effort 1.0h
+  }
+  task compensation "compensation" {
+    depends !rf
+    purge allocate
+    allocate ag,je,rk
+    duration 7d
+  }
+  task _10hz "10Hz check" {
+    depends !compensation
+    purge allocate
+    allocate ag,je
+    effort 8.0h
+  }
+  task hci "HCI transmission / trapping efficiency" {
+    depends !_10hz
+    purge allocate
+    allocate ag,rs,rk
+    duration 4h
+  }
+  task charge "charge exchange studies" {
+    depends !hci
+    purge allocate
+    allocate rs,rk
+    duration 1d
+  }
+}
+task ebit_prep "EBIT" {
+  task kick "try one different \"kicking\" scheme for less energy spread" {
+    purge allocate
+    allocate rk,rs
+    duration 1d
+  }
+  task beam "put EBIT beam into MPET" {
+    depends !kick
+    purge allocate
+    allocate rs,je,ag,rk
+    duration 1d
+  }
+  task charge "deciding on charge state(s) and optimizing breeding times" {
+    depends !beam
+    purge allocate
+    allocate rs,rk
+    effort 5.0h
+  }
+  task new "new ppg control" {
+    purge allocate
+    allocate rk
+    effort 24.0h
+  }
+  task checklists "checklists / timing calcs" {
+    purge allocate
+    allocate rs,rk
+    effort 4.0h
+  }
+}
+task other_prep "other prep" {
+  task safety "safety report" {
+    purge allocate
+    allocate dl
+    milestone
+    start 2015-07-30
+    end 2015-07-30
+  }
+  task shift "shift schedule" {
+    purge allocate
+    allocate rk
+    milestone
+    start 2015-08-04
+    end 2015-08-04
+  }
+  task freq "calculating frequencies" {
+    purge allocate
+    allocate bk
+    effort 1.0h
+  }
+  task bpr "BPR meeting" {
+    purge allocate
+    allocate rk, dl
+    effort 2.0h
+  }
+  task tune "tune buttons" {
+    purge allocate
+    allocate je
+    effort 2.0h
+  }
+  task refreshments "refreshments + snacks" {
+    purge allocate
+    allocate bb
+    effort 4.0h
+  }
+  task beamtime "beamtime mascot" {
+    purge allocate
+    allocate af
+    effort 40.0h
+  }
+}
+task beamtime "beamtime" {
+  task rfq "RFQ tuning" {
+    purge allocate
+    allocate rk,el
+    effort 16.0h
+    start 2015-08-14-20:00
+  }
+  task ebit "EBIT fine tuning" {
+    depends !rfq
+    purge allocate
+    allocate rk,rs
+    effort 8.0h
+  }
+  task ppg "ppg measurement" {
+    depends !ebit
+    purge allocate
+    allocate aak
+    effort 28.0h
+  }
+}
+textreport report "Plan" {
+  formats html
+  header '== olis_aug_2015 =='
+
+  center -8<-
+    [#Plan Plan] | [#Resource_Allocation Resource Allocation]
+    ----
+    === Plan ===
+    <[report id="plan"]>
+    ----
+    === Resources ===
+    <[report id="resourceGraph"]>
+  ->8-
+}
+
+# A traditional Gantt chart with a project overview.
+taskreport plan "" {
+  headline "Project Plan"
+  columns name, resources, chart {scale day width 1000}, end
+  loadunit shortauto
+  width 1200
+  hideresource 1
+}
+
+# A graph showing resource allocation. It identifies whether each
+# resource is under- or over-allocated for.
+resourcereport resourceGraph "" {
+  headline "Resource Allocation Graph"
+  columns name, weekly { width 1000 }
+  loadunit shortauto
+  hidetask ~(isleaf() & isleaf_())
+  sorttasks plan.start.up
+}
+
+# icalreport "rk.ics" {
+#  hidetask ~isdutyof(rk, plan)
+# }

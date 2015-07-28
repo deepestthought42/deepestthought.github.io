@@ -1,0 +1,295 @@
+
+* goal for OLIS beamtime
+- demonstrate ppb precision with beam from EBIT (under beamtime conditions)
+- since MPET vacuum conditions will prohibit using q=27+ anyway, do
+  this with A/q = 7-10; in this way, everything we do has bearing on
+  the following beamtimes; if everything works perfectly, we chnage
+  settings and look at q=27+ during the beamtime (that should take an
+  hour to do)
+
+* beamtime preperation OLIS S1445                                                         :taskjuggler_project:
+:PROPERTIES:
+:COLUMNS:  %50ITEM(Task) %8TODO(Todo) %10allocate %15start %7duration %7effort %10task_id %8BLOCKER %3complete
+:start:    2015-07-29
+:END:
+** MPET prep.
+:PROPERTIES:
+:ORDERED: t
+:task_id:  mpet_prep
+:END:
+*** solve MPET ppg issue
+:PROPERTIES:
+:allocate: ag,je
+:duration: 1d
+:task_id:  
+:END:
+*** fine tune beam from EBIT 
+:PROPERTIES:
+:allocate: rs,rk,je,ag
+:duration: 5d
+:task_id:  
+:BLOCKER:  charge
+:END:
+*** RF balancing
+:PROPERTIES:
+:allocate: ag,je
+:effort:   1h
+:END:
+*** compensation
+:PROPERTIES:
+:allocate: ag,je,rk
+:duration: 7d
+:END:      
+*** 10Hz check
+:PROPERTIES:
+:allocate: ag,je
+:effort:   8h
+:END:
+*** HCI transmission / trapping efficiency
+:PROPERTIES:
+:allocate: ag,rs,rk
+:duration: 4h
+:END:
+*** charge exchange studies
+:PROPERTIES:
+:allocate: rs,rk
+:duration: 1d
+:END:
+** EBIT   
+:PROPERTIES:
+:task_id:  ebit_prep
+:END:
+*** try one different "kicking" scheme for less energy spread 
+:PROPERTIES:
+:duration: 1d
+:task_id:  kick
+:allocate: rk,rs
+:END:
+*** put EBIT beam into MPET
+:PROPERTIES:
+:allocate: rs,je,ag,rk
+:duration: 1d
+:task_id:  beam
+:BLOCKER:  kick
+:END:
+*** deciding on charge state(s) and optimizing breeding times
+:PROPERTIES:
+:allocate: rs,rk
+:effort:   5h
+:BLOCKER:  beam
+:task_id:  charge
+:END:
+*** new ppg control
+:PROPERTIES:
+:allocate: rk
+:effort:   3d
+:END:
+*** checklists / timing calcs
+:PROPERTIES:
+:allocate: rs,rk
+:effort:   4h
+:END:
+** other prep
+:PROPERTIES:
+:task_id:  other_prep
+:END:
+*** safety report
+:PROPERTIES:
+:allocate: dl
+:start:    2015-07-30
+:end:    2015-07-30
+:END:      
+*** shift schedule
+:PROPERTIES:
+:allocate: rk
+:start: 2015-08-04
+:end:    2015-08-04
+:END:      
+*** calculating frequencies
+:PROPERTIES:
+:allocate: bk
+:task_id:  freq
+:effort:   1h
+:END:      
+*** BPR meeting
+:PROPERTIES:
+:effort:   2h
+:allocate: rk, dl
+:END:
+*** tune buttons
+:PROPERTIES:
+:allocate: je
+:effort:   2h
+:END:
+*** refreshments + snacks
+:PROPERTIES:
+:allocate: bb
+:effort:   4h
+:END:
+*** beamtime mascot
+:PROPERTIES:
+:allocate: af
+:effort:   1w
+:END:
+** beamtime
+:PROPERTIES:
+:BLOCKER:  mpet_prep,ebit_prep,other_prep
+:ORDERED: t
+:END:
+*** RFQ tuning  
+:PROPERTIES:
+:start:    2015-08-14-20:00
+:allocate: rk,el
+:effort:   16h
+:END:
+*** EBIT fine tuning
+:PROPERTIES:
+:allocate: rk,rs
+:effort:   8h
+:END:
+*** ppg measurement
+:PROPERTIES:
+:allocate: aak
+:effort:   3.5d
+:END:
+* People                              :taskjuggler_resource:
+:PROPERTIES:
+:COLUMNS:  %4resource_id %20ITEM(Name) %20shifts %20phone(Phone number / local) %20mail(Mailing adress) %100workinghours(Availibility)
+:END:
+** TITANs
+:PROPERTIES:
+:workinghours: mon - fri 8:00 - 20:00
+:limits:   { dailymax 12h }
+:END:
+*** Aaron
+:PROPERTIES:
+:resource_id: ag
+:mail:     agallant@triumf.ca
+:phone:    770-968-4144 / 6831
+:END:
+
+*** Andrew
+:PROPERTIES:
+:resource_id: af
+:phone:    / 6812
+:END:
+*** Ania
+:PROPERTIES:
+:resource_id: aak
+:mail:     aniak@triumf.ca
+:shifts:    p1 2014-11-07 - 2014-11-18
+:phone:    604-346-8346 / 7564
+:END:
+*** Annika
+:PROPERTIES:
+:resource_id: al
+:phone:    / 6877
+:mail:     lennarz@triumf.ca
+:END:
+*** Brad
+:PROPERTIES:
+:resource_id: bb
+:phone:    916-367-4538 / 6441
+:mail:     barquest@triumf.ca
+:END:
+*** Brian
+:PROPERTIES:
+:resource_id: bk
+:phone:    778-835-1776 / 6817
+:mail:     bak2@sfu.ca
+:END:
+*** Dan
+:PROPERTIES:
+:resource_id: dl
+:phone:    773-454-2913 / 6815
+:mail:     dlascar@triumf.ca
+:END:
+*** Devin
+:PROPERTIES:
+:resource_id: ds
+:phone:    / 6812
+:END:
+*** Erich
+:PROPERTIES:
+:resource_id: el
+:shifts:    p1 2014-11-07 - 2014-11-18
+:phone:    778-829-9958 / 6810
+:mail:     erichleist@gmail.com
+:END:      
+*** Jeff
+:PROPERTIES:
+:resource_id: jb
+:phone:    778-848-4152 / 6449
+:mail:     jcbale1@gmail.com
+:END:
+*** Julia
+:PROPERTIES:
+:resource_id: je
+:END:
+*** Kyle
+:PROPERTIES:
+:resource_id: kl
+:phone:    / 6839
+:mail:     kleach@triumf.ca
+:END:
+*** Renee
+:PROPERTIES:
+:resource_id: rk
+:mail:     rklawitter@triumf.ca
+:phone:    604-401-9822 / 6833
+:END:
+*** Ruben
+:PROPERTIES:
+:resource_id: rs
+:phone:    / 7551
+:END:
+*** Usman
+:PROPERTIES:
+:resource_id: uc
+:phone:    778-968-4144 / 6454
+:mail:     usman@triumf.ca
+:END:
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+** table of people
+#+BEGIN: columnview :hlines 1 :id global
+| resource_id | Name                            | shifts                     | Phone number / local | Mailing adress       | Availibility           |
+|-------------+---------------------------------+----------------------------+----------------------+----------------------+------------------------|
+|             | * People :taskjuggler_resource: |                            |                      |                      |                        |
+|             | ** TITANs                       |                            |                      |                      | mon - fri 8:00 - 20:00 |
+| ag          | *** Aaron                       |                            | 770-968-4144 / 6831  | agallant@triumf.ca   |                        |
+| af          | *** Andrew                      |                            | / 6812               |                      |                        |
+|             | **** workinghours               |                            |                      |                      |                        |
+| aak         | *** Ania                        | p1 2014-11-07 - 2014-11-18 | 604-346-8346 / 7564  | aniak@triumf.ca      |                        |
+| al          | *** Annika                      |                            | / 6877               | lennarz@triumf.ca    |                        |
+| bb          | *** Brad                        |                            | 916-367-4538 / 6441  | barquest@triumf.ca   |                        |
+| bk          | *** Brian                       |                            | 778-835-1776 / 6817  | bak2@sfu.ca          |                        |
+| dl          | *** Dan                         |                            | 773-454-2913 / 6815  | dlascar@triumf.ca    |                        |
+| ds          | *** Devin                       |                            | / 6812               |                      |                        |
+|             | **** workinghours               |                            |                      |                      |                        |
+| el          | *** Erich                       | p1 2014-11-07 - 2014-11-18 | 778-829-9958 / 6810  | erichleist@gmail.com |                        |
+|             | **** workinghours               |                            |                      |                      |                        |
+| jb          | *** Jeff                        |                            | 778-848-4152 / 6449  | jcbale1@gmail.com    |                        |
+| kl          | *** Kyle                        |                            | / 6839               | kleach@triumf.ca     |                        |
+|             | *** Milad                       |                            |                      |                      |                        |
+| rk          | *** Renee                       |                            | 604-401-9822 / 6833  | rklawitter@triumf.ca |                        |
+|             | **** shifts                     |                            |                      |                      |                        |
+|             | **** workinghours               |                            |                      |                      |                        |
+| rs          | *** Ruben                       |                            | / 7551               |                      |                        |
+| uc          | *** Usman                       |                            | 778-968-4144 / 6454  | usman@triumf.ca      |                        |
+#+END:
