@@ -71,8 +71,14 @@ task mpet_prep "MPET prep." {
     allocate ag,je
     effort 1.0h
   }
-  task compensation "compensation" {
+  task set "set discriminator" {
     depends !rf
+    purge allocate
+    allocate rk,rs
+    duration 2h
+  }
+  task compensation "compensation" {
+    depends !set
     purge allocate
     allocate ag,je,rk
     duration 7d
@@ -145,7 +151,7 @@ task other_prep "other prep" {
     allocate bk
     effort 1.0h
   }
-  task bpr "BPR meeting" {
+  task meeting "meeting with Collin" {
     purge allocate
     allocate rk, dl
     effort 2.0h
@@ -173,8 +179,12 @@ task beamtime "beamtime" {
     effort 16.0h
     start 2015-08-14-20:00
   }
-  task ebit "EBIT fine tuning" {
+  task look "Look for H30" {
     depends !rfq
+    milestone
+  }
+  task ebit "EBIT fine tuning" {
+    depends !look
     purge allocate
     allocate rk,rs
     effort 8.0h

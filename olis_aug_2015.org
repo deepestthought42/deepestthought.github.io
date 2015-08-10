@@ -1,3 +1,14 @@
+* S1445 Summary
+The Q EC-value of 74Rb currently dominates the uncertainty of its ft-value, which
+is important for the extraction of the CKM matrix element V ud from superallowed
+0 + → 0 + nuclear β-decays. 74Rb has the largest isospin-symmetry breaking
+corrections δ C of all 13 superallowed decays considered in the evaluation of V
+ud. It would hence carry particular weight to discriminate between conflicting
+theoretical models of δ C if 74Rb’s Q EC-value was known more precisely. Thus,
+we propose new direct mass measurements of 74Rb and 74Kr at the TITAN mass
+spectrometer. We intend to employ highly charged ions with charge states up to
+q = 27+, which will determine the Q EC-value with an uncertainty of 700 eV or
+below.
 
 * goal for OLIS beamtime
 - demonstrate ppb precision with beam from EBIT (under beamtime conditions)
@@ -17,30 +28,51 @@
 :ORDERED: t
 :task_id:  mpet_prep
 :END:
-*** solve MPET ppg issue
+*** DONE solve MPET ppg issue
+CLOSED: [2015-08-10 Mon 16:41]
 :PROPERTIES:
 :allocate: ag,je
 :duration: 1d
 :task_id:  
 :END:
-*** fine tune beam from EBIT 
+*** DONE hook ppg together
+CLOSED: [2015-08-10 Mon 16:41]
+:PROPERTIES:
+:allocate: rk,rs
+:duration: 2h
+:END:
+*** DONE fine tune beam from EBIT 
+CLOSED: [2015-08-10 Mon 16:42]
 :PROPERTIES:
 :allocate: rs,rk,je,ag
 :duration: 5d
 :task_id:  
 :BLOCKER:  charge
 :END:
+*** DONE charge exchange studies
+CLOSED: [2015-08-10 Mon 16:42]
+:PROPERTIES:
+:allocate: rs,rk
+:duration: 1d
+:END:
+*** DONE set discriminator 
+CLOSED: [2015-08-10 Mon 16:41]
+:PROPERTIES:
+:allocate: rk,rs
+:duration: 2h
+:END:
+*** WAITING compensation
+:PROPERTIES:
+:allocate: ag,je,rk
+:duration: 7d
+:END:      
 *** RF balancing
 :PROPERTIES:
 :allocate: ag,je
 :effort:   1h
 :END:
-*** compensation
-:PROPERTIES:
-:allocate: ag,je,rk
-:duration: 7d
-:END:      
-*** 10Hz check
+*** CANCELED 10Hz check
+CLOSED: [2015-08-10 Mon 16:42]
 :PROPERTIES:
 :allocate: ag,je
 :effort:   8h
@@ -50,22 +82,19 @@
 :allocate: ag,rs,rk
 :duration: 4h
 :END:
-*** charge exchange studies
-:PROPERTIES:
-:allocate: rs,rk
-:duration: 1d
-:END:
 ** EBIT   
 :PROPERTIES:
 :task_id:  ebit_prep
 :END:
-*** try one different "kicking" scheme for less energy spread 
+*** DONE try one different "kicking" scheme for less energy spread 
+CLOSED: [2015-08-10 Mon 16:42]
 :PROPERTIES:
 :duration: 1d
 :task_id:  kick
 :allocate: rk,rs
 :END:
-*** put EBIT beam into MPET
+*** DONE put EBIT beam into MPET
+CLOSED: [2015-08-10 Mon 16:42]
 :PROPERTIES:
 :allocate: rs,je,ag,rk
 :duration: 1d
@@ -93,25 +122,27 @@
 :PROPERTIES:
 :task_id:  other_prep
 :END:
-*** safety report
+*** DONE safety report
+CLOSED: [2015-08-10 Mon 16:42]
 :PROPERTIES:
 :allocate: dl
 :start:    2015-07-30
 :end:    2015-07-30
 :END:      
-*** shift schedule
+*** DONE shift schedule
+CLOSED: [2015-08-10 Mon 16:42]
 :PROPERTIES:
 :allocate: rk
 :start: 2015-08-04
 :end:    2015-08-04
 :END:      
-*** calculating frequencies
+*** TODO calculating frequencies
 :PROPERTIES:
 :allocate: bk
 :task_id:  freq
 :effort:   1h
 :END:      
-*** BPR meeting
+*** meeting with Collin
 :PROPERTIES:
 :effort:   2h
 :allocate: rk, dl
@@ -142,6 +173,7 @@
 :allocate: rk,el
 :effort:   16h
 :END:
+*** Look for H^3O
 *** EBIT fine tuning
 :PROPERTIES:
 :allocate: rk,rs
@@ -293,3 +325,61 @@
 | rs          | *** Ruben                       |                            | / 7551               |                      |                        |
 | uc          | *** Usman                       |                            | 778-968-4144 / 6454  | usman@triumf.ca      |                        |
 #+END:
+* constraints for schedule
+** Dan and Brad; Brad's wedding
+** Brian, not on the 14th in the evening
+* todos
+** TODO create schedule
+SCHEDULED: <2015-07-30 Thu>
+*** who has constraints ? 
+- brad won't be there at all
+- Dan is away 14th to 16th
+- brian has appt. on 14th evening
+- erich 18th
+
+*** exact dates
+- start: 14th, 8pm
+- end: 18th, 8pm
+
+*** what are the roles / responsibilities
+- MPET
+- EBIT
+- Documentation / online analysis
+
+*** who is there and can do what ?
+| people      | can do                             |
+|-------------+------------------------------------|
+| Ania        | MPET, RFQ, lead                    |
+| Aaron       | MPET, RFQ, lead, (EBIT)            |
+| Ruben       | EBIT, Documentation                |
+| Dan         | lead, Documentation                |
+| Jeff        | Documentation, Analysis            |
+| Brian       | Documentation, Analysis            |
+| Devon       | Documentation                      |
+| Erich       | MPET, RFQ, Documentation, Analysis |
+| Julia       | (MPET), Documentation, Analysis    |
+| Renee       | (MPET), EBIT, lead                 |
+| Kai         | Documentation                      |
+| Andrew      | Documentation, Analysis            |
+
+* meeting 150804
+** Qs
+- do we have a date for the meeting with collin / BPR
+- 
+* changing charge states
+[2015-08-10 Mon 09:32]
+- reestablished trapping very easily and got a nice resonance (~18% ToF)
+- to be able to do an accuracy check we need to have more than 133Cs
+  13+; so get 14+ in the trap. While doing that trying to get more BNG
+  times to be able to extrapolate
+- w/ BNG the rate is about .5/shot; w/o it is about 0.6/shot, that is
+  not too bad
+- doing PB5 scan 17850 - 17900; 17875 -> 17875
+
+** BNG / capture timings
+| species   | BNG offset | BNG  width | PLT delay | capture | rate w/BNG [/shot] |
+|-----------+------------+------------+-----------+---------+--------------------|
+| 133Cs 13+ |    0.02472 |     0.0008 |     0.039 |  0.0399 |                 .5 |
+| 133Cs 14+ |    0.02375 |     0.0008 |           |         |                 .6 |
+| 133Cs 12+ |    0.02578 |      0.001 |           |         |                 .6 |
+
