@@ -57,61 +57,83 @@ task mpet_prep "MPET prep." {
   task solve "solve MPET ppg issue" {
     purge allocate
     allocate ag,je
+    complete 100
     duration 1d
   }
+  task hook "hook ppg together" {
+    depends !solve
+    purge allocate
+    allocate rk,rs
+    complete 100
+    duration 2h
+  }
   task fine "fine tune beam from EBIT" {
-    depends !solve, !!ebit_prep.charge
+    depends !hook, !!ebit_prep.charge
     purge allocate
     allocate rs,rk,je,ag
+    complete 100
     duration 5d
   }
-  task rf "RF balancing" {
+  task charge "charge exchange studies" {
     depends !fine
+    purge allocate
+    allocate rs,rk
+    complete 100
+    duration 1d
+  }
+  task set "set discriminator" {
+    depends !charge
+    purge allocate
+    allocate rk,rs
+    complete 100
+    duration 2h
+  }
+  task accuracy "accuracy check" {
+    depends !set
+    purge allocate
+    allocate ag,je
+    complete 100
+    start 2015-08-10
+    duration 1d
+  }
+  task _10hz "10Hz check" {
+    depends !accuracy
+    purge allocate
+    allocate ag,je
+    complete 100
+    effort 8.0h
+  }
+  task rf "RF balancing" {
+    depends !_10hz, !!ebit_prep.capture
     purge allocate
     allocate ag,je
     effort 1.0h
   }
-  task set "set discriminator" {
-    depends !rf
-    purge allocate
-    allocate rk,rs
-    duration 2h
-  }
-  task compensation "compensation" {
-    depends !set
-    purge allocate
-    allocate ag,je,rk
-    duration 7d
-  }
-  task _10hz "10Hz check" {
-    depends !compensation
-    purge allocate
-    allocate ag,je
-    effort 8.0h
-  }
   task hci "HCI transmission / trapping efficiency" {
-    depends !_10hz
+    depends !rf
     purge allocate
     allocate ag,rs,rk
     duration 4h
-  }
-  task charge "charge exchange studies" {
-    depends !hci
-    purge allocate
-    allocate rs,rk
-    duration 1d
   }
 }
 task ebit_prep "EBIT" {
   task kick "try one different \"kicking\" scheme for less energy spread" {
     purge allocate
     allocate rk,rs
+    complete 100
     duration 1d
   }
   task beam "put EBIT beam into MPET" {
     depends !kick
     purge allocate
     allocate rs,je,ag,rk
+    complete 100
+    duration 1d
+  }
+  task capture "change how we capture beam in EBIT" {
+    purge allocate
+    allocate rk,rs,aak
+    start 2015-08-11
     duration 1d
   }
   task charge "deciding on charge state(s) and optimizing breeding times" {
@@ -135,6 +157,7 @@ task other_prep "other prep" {
   task safety "safety report" {
     purge allocate
     allocate dl
+    complete 100
     milestone
     start 2015-07-30
     end 2015-07-30
@@ -142,6 +165,7 @@ task other_prep "other prep" {
   task shift "shift schedule" {
     purge allocate
     allocate rk
+    complete 100
     milestone
     start 2015-08-04
     end 2015-08-04
@@ -149,6 +173,7 @@ task other_prep "other prep" {
   task freq "calculating frequencies" {
     purge allocate
     allocate bk
+    complete 100
     effort 1.0h
   }
   task meeting "meeting with Collin" {
@@ -179,7 +204,7 @@ task beamtime "beamtime" {
     effort 16.0h
     start 2015-08-14-20:00
   }
-  task look "Look for H30" {
+  task look "Look for H^3O" {
     depends !rfq
     milestone
   }
@@ -198,10 +223,10 @@ task beamtime "beamtime" {
 }
 textreport report "Plan" {
   formats html
-  header '== olis_aug_2015 =='
+  header '== beamtime preperation OLIS S1445 =='
 
   center -8<-
-    [#Plan Plan] | [#Resource_Allocation Resource Allocation]
+    [#Summary Summary] | [#Plan Plan] | [#Resource_Allocation Resource Allocation]
     ----
     === Plan ===
     <[report id="plan"]>
@@ -214,9 +239,9 @@ textreport report "Plan" {
 # A traditional Gantt chart with a project overview.
 taskreport plan "" {
   headline "Project Plan"
-  columns name, resources, chart {scale day width 1000}, end
+  columns name, resources, complete, chart {scale day width 1000}, end
   loadunit shortauto
-  width 1200
+  width 1000
   hideresource 1
 }
 

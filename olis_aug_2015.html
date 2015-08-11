@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2015-08-10 Mon 17:55 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Renee Klawitter" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/org-style.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. S1445 Summary</a></li>
+<li><a href="#orgheadline3">2. goals agreed upon during 7/30 meeting</a>
+<ul>
+<li><a href="#orgheadline2">2.1. Goals during the beamtime itself:</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline34">3. beamtime preperation OLIS S1445&#xa0;&#xa0;&#xa0;<span class="tag"><span class="taskjuggler_project">taskjuggler_project</span></span></a>
+<ul>
+<li><a href="#orgheadline13">3.1. MPET prep.</a>
+<ul>
+<li><a href="#orgheadline4">3.1.1. <span class="done nilDONE">DONE</span> solve MPET ppg issue</a></li>
+<li><a href="#orgheadline5">3.1.2. <span class="done nilDONE">DONE</span> hook ppg together</a></li>
+<li><a href="#orgheadline6">3.1.3. <span class="done nilDONE">DONE</span> fine tune beam from EBIT</a></li>
+<li><a href="#orgheadline7">3.1.4. <span class="done nilDONE">DONE</span> charge exchange studies</a></li>
+<li><a href="#orgheadline8">3.1.5. <span class="done nilDONE">DONE</span> set discriminator</a></li>
+<li><a href="#orgheadline9">3.1.6. <span class="done nilDONE">DONE</span> accuracy check</a></li>
+<li><a href="#orgheadline10">3.1.7. <span class="done nilCANCELED">CANCELED</span> 10Hz check</a></li>
+<li><a href="#orgheadline11">3.1.8. RF balancing</a></li>
+<li><a href="#orgheadline12">3.1.9. HCI transmission / trapping efficiency</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline20">3.2. EBIT</a>
+<ul>
+<li><a href="#orgheadline14">3.2.1. <span class="done nilDONE">DONE</span> try one different "kicking" scheme for less energy spread</a></li>
+<li><a href="#orgheadline15">3.2.2. <span class="done nilDONE">DONE</span> put EBIT beam into MPET</a></li>
+<li><a href="#orgheadline16">3.2.3. <span class="todo nilTODO">TODO</span> change how we capture beam in EBIT</a></li>
+<li><a href="#orgheadline17">3.2.4. deciding on charge state(s) and optimizing breeding times</a></li>
+<li><a href="#orgheadline18">3.2.5. new ppg control</a></li>
+<li><a href="#orgheadline19">3.2.6. checklists / timing calcs</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline28">3.3. other prep</a>
+<ul>
+<li><a href="#orgheadline21">3.3.1. <span class="done nilDONE">DONE</span> safety report</a></li>
+<li><a href="#orgheadline22">3.3.2. <span class="done nilDONE">DONE</span> shift schedule</a></li>
+<li><a href="#orgheadline23">3.3.3. <span class="done nilDONE">DONE</span> calculating frequencies</a></li>
+<li><a href="#orgheadline24">3.3.4. meeting with Collin</a></li>
+<li><a href="#orgheadline25">3.3.5. tune buttons</a></li>
+<li><a href="#orgheadline26">3.3.6. refreshments + snacks</a></li>
+<li><a href="#orgheadline27">3.3.7. beamtime mascot</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline33">3.4. beamtime</a>
+<ul>
+<li><a href="#orgheadline29">3.4.1. RFQ tuning</a></li>
+<li><a href="#orgheadline30">3.4.2. Look for H^3O</a></li>
+<li><a href="#orgheadline31">3.4.3. EBIT fine tuning</a></li>
+<li><a href="#orgheadline32">3.4.4. ppg measurement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline52">4. People&#xa0;&#xa0;&#xa0;<span class="tag"><span class="taskjuggler_resource">taskjuggler_resource</span></span></a>
+<ul>
+<li><a href="#orgheadline50">4.1. TITANs</a>
+<ul>
+<li><a href="#orgheadline35">4.1.1. Aaron</a></li>
+<li><a href="#orgheadline36">4.1.2. Andrew</a></li>
+<li><a href="#orgheadline37">4.1.3. Ania</a></li>
+<li><a href="#orgheadline38">4.1.4. Annika</a></li>
+<li><a href="#orgheadline39">4.1.5. Brad</a></li>
+<li><a href="#orgheadline40">4.1.6. Brian</a></li>
+<li><a href="#orgheadline41">4.1.7. Dan</a></li>
+<li><a href="#orgheadline42">4.1.8. Devin</a></li>
+<li><a href="#orgheadline43">4.1.9. Erich</a></li>
+<li><a href="#orgheadline44">4.1.10. Jeff</a></li>
+<li><a href="#orgheadline45">4.1.11. Julia</a></li>
+<li><a href="#orgheadline46">4.1.12. Kyle</a></li>
+<li><a href="#orgheadline47">4.1.13. Renee</a></li>
+<li><a href="#orgheadline48">4.1.14. Ruben</a></li>
+<li><a href="#orgheadline49">4.1.15. Usman</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline51">4.2. table of people</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline58">5. todos</a>
+<ul>
+<li><a href="#orgheadline57">5.1. <span class="done nilDONE">DONE</span> create schedule</a>
+<ul>
+<li><a href="#orgheadline53">5.1.1. who has constraints ?</a></li>
+<li><a href="#orgheadline54">5.1.2. exact dates</a></li>
+<li><a href="#orgheadline55">5.1.3. what are the roles / responsibilities</a></li>
+<li><a href="#orgheadline56">5.1.4. who is there and can do what ?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline61">6. work on the beamline</a>
+<ul>
+<li><a href="#orgheadline60">6.1. changing charge states</a>
+<ul>
+<li><a href="#orgheadline59">6.1.1. BNG / capture timings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> S1445 Summary</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The Q EC-value of 74Rb currently dominates the uncertainty of its ft-value, which
+is important for the extraction of the CKM matrix element V ud from superallowed
+0 + → 0 + nuclear β-decays. 74Rb has the largest isospin-symmetry breaking
+corrections δ C of all 13 superallowed decays considered in the evaluation of V
+ud. It would hence carry particular weight to discriminate between conflicting
+theoretical models of δ C if 74Rb’s Q EC-value was known more precisely. Thus,
+we propose new direct mass measurements of 74Rb and 74Kr at the TITAN mass
+spectrometer. We intend to employ highly charged ions with charge states up to
+q = 27+, which will determine the Q EC-value with an uncertainty of 700 eV or
+below.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3"><span class="section-number-2">2</span> goals agreed upon during 7/30 meeting</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>set up EBIT and tune of HCI into MPET around q=10+ which fits best
+to the m/q of later online beamtimes this summer [estimated time 3-4
+days]</li>
+<li><p>
+accuracy check of MPET with these HCI to the level needed for the
+beamtimes this summer.
+</p>
+
+<p>
+Given that the required accuracy for later beamtime is modest and based
+upon Aaron’s MPET performance estimate, it is likely that the MPET will
+already now meet these requirements.
+</p>
+
+<p>
+If the required accuracy cannot be met, then a compensation is required
+[estimated time: 1 week]; hence, this implies that with the exception
+of the Kr-RFQ test, the OLIS beamtime can probably not be used to push
+the HCI program forward. We would need to discuss what to do, whether
+shifts can be returned, etc.
+</p>
+
+<p>
+If the required accuracy is confirmed, no compensation is required for
+this summer and we proceed towards the OLIS beamtime (see 3)
+</p></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><p>
+in one or two steps increase breeding time and tune to MPET towards
+Rb27+ [estimated time 3-4 days]
+</p>
+
+<p>
+We should go as high in charge state as possible until a tune for
+Rb27+ is obtained or the OLIS beamtime starts- whatever comes first
+</p></li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">2.1</span> Goals during the beamtime itself:</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><p>
+recording of nice resonances of HCI (ideally Rb and Kr at the max.
+charge state obtained during the preparations ) with increasing
+excitation times (5 ms, 10 ms, 20 ms, 30 ms, …) until the charge
+exchange in MPET destroys the resonance entirely
+</p>
+
+<p>
+From this data, we will make plots of:
+</p>
+
+<ul class="org-ul">
+<li>achieved precision versus Trf</li>
+
+<li>number of surviving HCIs / H2+ versus Trf</li>
+</ul>
+<p>
+This will already teach us the best Trf (i.e. leading to the highest
+precision) given the current vacuum conditions in MPET.
+</p></li>
+
+<li>in this best Trf, we would like to see the effect of evaporative
+cooling (quality of resonance, TOF spread for trapped ions without
+excitation). Hence, data with and without evaporative cooling should
+be taken. Again this should lead to a nice comparative plot.</li>
+
+<li>investigation of EBIT charge state efficiencies and whether the
+threshold charge breeding can be observed with this long breeding
+times. [I understand that Renee would like to investigate this
+already during the preparations].</li>
+
+<li>investigation how difficult it is to get Kr through the RFQ</li>
+
+<li>start a mass measurement of Rb27+ vs Kr?+ (maybe even a triangle
+85Rb27+,87Rb27+ and Kr ??) and see how far we get until the end of
+the beamtime.</li>
+</ul>
+
+<p>
+Once again, this beamtime should be used to test and advance the HCI
+program at and beyond its current limit. It is a true experiment and
+not a measurement. So, it is very different to a ‘normal’ online
+beamtime.
+</p>
+
+<p>
+If we indeed manage to perform an accurate measurement at q=27+ at the
+ppb level, this would be amazing- and I send two bottles of champagne
+as promised ;-)
+</p>
+
+<p>
+However, this is beyond the basic expectation and if it cannot
+achieved, I won’t consider this beamtime as a failure. Quite the
+opposite, indeed. Sorry that I failed to communicate this before.
+</p>
+
+<p>
+The success of this beamtime is defined as
+</p>
+
+<ul class="org-ul">
+<li>pushing the limits what is currently possible with HCI and</li>
+
+<li>demonstrating the answers to those questions which we do currently
+not have definite answers for but are important to decide on the
+path of the future HCI strategy. As we have seen during today’s
+discussion there are quite a few of those…</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline34" class="outline-2">
+<h2 id="orgheadline34"><span class="section-number-2">3</span> beamtime preperation OLIS S1445&#xa0;&#xa0;&#xa0;<span class="tag"><span class="taskjuggler_project">taskjuggler_project</span></span></h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">3.1</span> MPET prep.</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">3.1.1</span> <span class="done DONE">DONE</span> solve MPET ppg issue</h4>
+<div class="outline-text-4" id="text-3-1-1">
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">3.1.2</span> <span class="done DONE">DONE</span> hook ppg together</h4>
+<div class="outline-text-4" id="text-3-1-2">
+</div>
+</div>
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">3.1.3</span> <span class="done DONE">DONE</span> fine tune beam from EBIT</h4>
+<div class="outline-text-4" id="text-3-1-3">
+</div>
+</div>
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">3.1.4</span> <span class="done DONE">DONE</span> charge exchange studies</h4>
+<div class="outline-text-4" id="text-3-1-4">
+</div>
+</div>
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">3.1.5</span> <span class="done DONE">DONE</span> set discriminator</h4>
+<div class="outline-text-4" id="text-3-1-5">
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">3.1.6</span> <span class="done DONE">DONE</span> accuracy check</h4>
+<div class="outline-text-4" id="text-3-1-6">
+</div>
+</div>
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">3.1.7</span> <span class="done CANCELED">CANCELED</span> 10Hz check</h4>
+<div class="outline-text-4" id="text-3-1-7">
+</div>
+</div>
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11"><span class="section-number-4">3.1.8</span> RF balancing</h4>
+<div class="outline-text-4" id="text-3-1-8">
+</div>
+</div>
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">3.1.9</span> HCI transmission / trapping efficiency</h4>
+<div class="outline-text-4" id="text-3-1-9">
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">3.2</span> EBIT</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">3.2.1</span> <span class="done DONE">DONE</span> try one different "kicking" scheme for less energy spread</h4>
+<div class="outline-text-4" id="text-3-2-1">
+</div>
+</div>
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15"><span class="section-number-4">3.2.2</span> <span class="done DONE">DONE</span> put EBIT beam into MPET</h4>
+<div class="outline-text-4" id="text-3-2-2">
+</div>
+</div>
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">3.2.3</span> <span class="todo TODO">TODO</span> change how we capture beam in EBIT</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<p>
+since efficiency capturing is bad right now we need to change the
+capturing scheme:
+</p>
+
+<ul class="org-ul">
+<li>instead of pulsing up with DT3, I will try to pulse down the beam
+with DT4 while simultaneously switching DT3 up, then ramp up DT4
+slowly and release with DT3 as before</li>
+<li>releasing the beam with the same bias on the DTS should ensure that
+we have the same beam properties on extraction and can reuse the
+tune we have right now</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">3.2.4</span> deciding on charge state(s) and optimizing breeding times</h4>
+<div class="outline-text-4" id="text-3-2-4">
+</div>
+</div>
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">3.2.5</span> new ppg control</h4>
+<div class="outline-text-4" id="text-3-2-5">
+</div>
+</div>
+<div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">3.2.6</span> checklists / timing calcs</h4>
+<div class="outline-text-4" id="text-3-2-6">
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline28" class="outline-3">
+<h3 id="orgheadline28"><span class="section-number-3">3.3</span> other prep</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-orgheadline21" class="outline-4">
+<h4 id="orgheadline21"><span class="section-number-4">3.3.1</span> <span class="done DONE">DONE</span> safety report</h4>
+<div class="outline-text-4" id="text-3-3-1">
+</div>
+</div>
+<div id="outline-container-orgheadline22" class="outline-4">
+<h4 id="orgheadline22"><span class="section-number-4">3.3.2</span> <span class="done DONE">DONE</span> shift schedule</h4>
+<div class="outline-text-4" id="text-3-3-2">
+</div>
+</div>
+<div id="outline-container-orgheadline23" class="outline-4">
+<h4 id="orgheadline23"><span class="section-number-4">3.3.3</span> <span class="done DONE">DONE</span> calculating frequencies</h4>
+<div class="outline-text-4" id="text-3-3-3">
+</div>
+</div>
+<div id="outline-container-orgheadline24" class="outline-4">
+<h4 id="orgheadline24"><span class="section-number-4">3.3.4</span> meeting with Collin</h4>
+<div class="outline-text-4" id="text-3-3-4">
+</div>
+</div>
+<div id="outline-container-orgheadline25" class="outline-4">
+<h4 id="orgheadline25"><span class="section-number-4">3.3.5</span> tune buttons</h4>
+<div class="outline-text-4" id="text-3-3-5">
+</div>
+</div>
+<div id="outline-container-orgheadline26" class="outline-4">
+<h4 id="orgheadline26"><span class="section-number-4">3.3.6</span> refreshments + snacks</h4>
+<div class="outline-text-4" id="text-3-3-6">
+</div>
+</div>
+<div id="outline-container-orgheadline27" class="outline-4">
+<h4 id="orgheadline27"><span class="section-number-4">3.3.7</span> beamtime mascot</h4>
+<div class="outline-text-4" id="text-3-3-7">
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33"><span class="section-number-3">3.4</span> beamtime</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<div id="outline-container-orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">3.4.1</span> RFQ tuning</h4>
+<div class="outline-text-4" id="text-3-4-1">
+</div>
+</div>
+<div id="outline-container-orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">3.4.2</span> Look for H^3O</h4>
+</div>
+<div id="outline-container-orgheadline31" class="outline-4">
+<h4 id="orgheadline31"><span class="section-number-4">3.4.3</span> EBIT fine tuning</h4>
+<div class="outline-text-4" id="text-3-4-3">
+</div>
+</div>
+<div id="outline-container-orgheadline32" class="outline-4">
+<h4 id="orgheadline32"><span class="section-number-4">3.4.4</span> ppg measurement</h4>
+<div class="outline-text-4" id="text-3-4-4">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline52" class="outline-2">
+<h2 id="orgheadline52"><span class="section-number-2">4</span> People&#xa0;&#xa0;&#xa0;<span class="tag"><span class="taskjuggler_resource">taskjuggler_resource</span></span></h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgheadline50" class="outline-3">
+<h3 id="orgheadline50"><span class="section-number-3">4.1</span> TITANs</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-orgheadline35" class="outline-4">
+<h4 id="orgheadline35"><span class="section-number-4">4.1.1</span> Aaron</h4>
+<div class="outline-text-4" id="text-4-1-1">
+</div>
+</div>
+
+<div id="outline-container-orgheadline36" class="outline-4">
+<h4 id="orgheadline36"><span class="section-number-4">4.1.2</span> Andrew</h4>
+<div class="outline-text-4" id="text-4-1-2">
+</div>
+</div>
+<div id="outline-container-orgheadline37" class="outline-4">
+<h4 id="orgheadline37"><span class="section-number-4">4.1.3</span> Ania</h4>
+<div class="outline-text-4" id="text-4-1-3">
+</div>
+</div>
+<div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><span class="section-number-4">4.1.4</span> Annika</h4>
+<div class="outline-text-4" id="text-4-1-4">
+</div>
+</div>
+<div id="outline-container-orgheadline39" class="outline-4">
+<h4 id="orgheadline39"><span class="section-number-4">4.1.5</span> Brad</h4>
+<div class="outline-text-4" id="text-4-1-5">
+</div>
+</div>
+<div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40"><span class="section-number-4">4.1.6</span> Brian</h4>
+<div class="outline-text-4" id="text-4-1-6">
+</div>
+</div>
+<div id="outline-container-orgheadline41" class="outline-4">
+<h4 id="orgheadline41"><span class="section-number-4">4.1.7</span> Dan</h4>
+<div class="outline-text-4" id="text-4-1-7">
+</div>
+</div>
+<div id="outline-container-orgheadline42" class="outline-4">
+<h4 id="orgheadline42"><span class="section-number-4">4.1.8</span> Devin</h4>
+<div class="outline-text-4" id="text-4-1-8">
+</div>
+</div>
+<div id="outline-container-orgheadline43" class="outline-4">
+<h4 id="orgheadline43"><span class="section-number-4">4.1.9</span> Erich</h4>
+<div class="outline-text-4" id="text-4-1-9">
+</div>
+</div>
+<div id="outline-container-orgheadline44" class="outline-4">
+<h4 id="orgheadline44"><span class="section-number-4">4.1.10</span> Jeff</h4>
+<div class="outline-text-4" id="text-4-1-10">
+</div>
+</div>
+<div id="outline-container-orgheadline45" class="outline-4">
+<h4 id="orgheadline45"><span class="section-number-4">4.1.11</span> Julia</h4>
+<div class="outline-text-4" id="text-4-1-11">
+</div>
+</div>
+<div id="outline-container-orgheadline46" class="outline-4">
+<h4 id="orgheadline46"><span class="section-number-4">4.1.12</span> Kyle</h4>
+<div class="outline-text-4" id="text-4-1-12">
+</div>
+</div>
+<div id="outline-container-orgheadline47" class="outline-4">
+<h4 id="orgheadline47"><span class="section-number-4">4.1.13</span> Renee</h4>
+<div class="outline-text-4" id="text-4-1-13">
+</div>
+</div>
+<div id="outline-container-orgheadline48" class="outline-4">
+<h4 id="orgheadline48"><span class="section-number-4">4.1.14</span> Ruben</h4>
+<div class="outline-text-4" id="text-4-1-14">
+</div>
+</div>
+<div id="outline-container-orgheadline49" class="outline-4">
+<h4 id="orgheadline49"><span class="section-number-4">4.1.15</span> Usman</h4>
+<div class="outline-text-4" id="text-4-1-15">
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orgheadline51" class="outline-3">
+<h3 id="orgheadline51"><span class="section-number-3">4.2</span> table of people</h3>
+<div class="outline-text-3" id="text-4-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">resource_id</th>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">shifts</th>
+<th scope="col" class="org-left">Phone number / local</th>
+<th scope="col" class="org-left">Mailing adress</th>
+<th scope="col" class="org-left">Availibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">ag</td>
+<td class="org-left">Aaron</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">770-968-4144 / 6831</td>
+<td class="org-left">agallant@triumf.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">af</td>
+<td class="org-left">Andrew</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/ 6812</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">aak</td>
+<td class="org-left">Ania</td>
+<td class="org-left">p1 2014-11-07 - 2014-11-18</td>
+<td class="org-left">604-346-8346 / 7564</td>
+<td class="org-left">aniak@triumf.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">al</td>
+<td class="org-left">Annika</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/ 6877</td>
+<td class="org-left">lennarz@triumf.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">bb</td>
+<td class="org-left">Brad</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">916-367-4538 / 6441</td>
+<td class="org-left">barquest@triumf.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">bk</td>
+<td class="org-left">Brian</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">778-835-1776 / 6817</td>
+<td class="org-left">bak2@sfu.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">dl</td>
+<td class="org-left">Dan</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">773-454-2913 / 6815</td>
+<td class="org-left">dlascar@triumf.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ds</td>
+<td class="org-left">Devin</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/ 6812</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">el</td>
+<td class="org-left">Erich</td>
+<td class="org-left">p1 2014-11-07 - 2014-11-18</td>
+<td class="org-left">778-829-9958 / 6810</td>
+<td class="org-left">erichleist@gmail.com</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">jb</td>
+<td class="org-left">Jeff</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">778-848-4152 / 6449</td>
+<td class="org-left">jcbale1@gmail.com</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">rk</td>
+<td class="org-left">Renee</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">604-401-9822 / 6833</td>
+<td class="org-left">rklawitter@triumf.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">rs</td>
+<td class="org-left">Ruben</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">/ 7551</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">uc</td>
+<td class="org-left">Usman</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">778-968-4144 / 6454</td>
+<td class="org-left">usman@triumf.ca</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline58" class="outline-2">
+<h2 id="orgheadline58"><span class="section-number-2">5</span> todos</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-orgheadline57" class="outline-3">
+<h3 id="orgheadline57"><span class="section-number-3">5.1</span> <span class="done DONE">DONE</span> create schedule</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-orgheadline53" class="outline-4">
+<h4 id="orgheadline53"><span class="section-number-4">5.1.1</span> who has constraints ?</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<ul class="org-ul">
+<li>brad won't be there at all</li>
+<li>Dan is away 14th to 16th</li>
+<li>brian has appt. on 14th evening</li>
+<li>erich 18th</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline54" class="outline-4">
+<h4 id="orgheadline54"><span class="section-number-4">5.1.2</span> exact dates</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<ul class="org-ul">
+<li>start: 14th, 8pm</li>
+<li>end: 18th, 8pm</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline55" class="outline-4">
+<h4 id="orgheadline55"><span class="section-number-4">5.1.3</span> what are the roles / responsibilities</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<ul class="org-ul">
+<li>MPET</li>
+<li>EBIT</li>
+<li>Documentation / online analysis</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline56" class="outline-4">
+<h4 id="orgheadline56"><span class="section-number-4">5.1.4</span> who is there and can do what ?</h4>
+<div class="outline-text-4" id="text-5-1-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">people</th>
+<th scope="col" class="org-left">can do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Ania</td>
+<td class="org-left">MPET, RFQ, lead</td>
+</tr>
+
+<tr>
+<td class="org-left">Aaron</td>
+<td class="org-left">MPET, RFQ, lead, (EBIT)</td>
+</tr>
+
+<tr>
+<td class="org-left">Ruben</td>
+<td class="org-left">EBIT, Documentation</td>
+</tr>
+
+<tr>
+<td class="org-left">Dan</td>
+<td class="org-left">lead, Documentation</td>
+</tr>
+
+<tr>
+<td class="org-left">Jeff</td>
+<td class="org-left">Documentation, Analysis</td>
+</tr>
+
+<tr>
+<td class="org-left">Brian</td>
+<td class="org-left">Documentation, Analysis</td>
+</tr>
+
+<tr>
+<td class="org-left">Devon</td>
+<td class="org-left">Documentation</td>
+</tr>
+
+<tr>
+<td class="org-left">Erich</td>
+<td class="org-left">MPET, RFQ, Documentation, Analysis</td>
+</tr>
+
+<tr>
+<td class="org-left">Julia</td>
+<td class="org-left">(MPET), Documentation, Analysis</td>
+</tr>
+
+<tr>
+<td class="org-left">Renee</td>
+<td class="org-left">(MPET), EBIT, lead</td>
+</tr>
+
+<tr>
+<td class="org-left">Kai</td>
+<td class="org-left">Documentation</td>
+</tr>
+
+<tr>
+<td class="org-left">Andrew</td>
+<td class="org-left">Documentation, Analysis</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline61" class="outline-2">
+<h2 id="orgheadline61"><span class="section-number-2">6</span> work on the beamline</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-orgheadline60" class="outline-3">
+<h3 id="orgheadline60"><span class="section-number-3">6.1</span> changing charge states</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2015-08-10 Mon 09:32]</span></span>
+</p>
+<ul class="org-ul">
+<li><p>
+reestablished trapping very easily and got a nice resonance (~18% ToF)
+</p>
+
+<div class="figure">
+<p><img src="./work on the beamline/Screenshot%20from%202015-08-10%2010:45:29_2015-08-10_17:25:48.png" alt="Screenshot%20from%202015-08-10%2010:45:29_2015-08-10_17:25:48.png" width="800px" />
+</p>
+</div></li>
+<li>to be able to do an accuracy check we need to have more than 133Cs
+13+; so get 14+ in the trap. While doing that trying to get more BNG
+times to be able to extrapolate</li>
+<li>w/ BNG the rate is about .5/shot; w/o it is about 0.6/shot, that is
+not too bad</li>
+<li>doing PB5 scan 17850 - 17900; 17875 -&gt; 17875</li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline59" class="outline-4">
+<h4 id="orgheadline59"><span class="section-number-4">6.1.1</span> BNG / capture timings</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">species</th>
+<th scope="col" class="org-right">BNG offset</th>
+<th scope="col" class="org-right">BNG  width</th>
+<th scope="col" class="org-right">PLT delay</th>
+<th scope="col" class="org-right">capture</th>
+<th scope="col" class="org-right">rate w/BNG [/shot]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">133Cs 13+</td>
+<td class="org-right">0.02472</td>
+<td class="org-right">0.0008</td>
+<td class="org-right">0.039</td>
+<td class="org-right">0.0399</td>
+<td class="org-right">.5</td>
+</tr>
+
+<tr>
+<td class="org-left">133Cs 14+</td>
+<td class="org-right">0.02375</td>
+<td class="org-right">0.0008</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">.6</td>
+</tr>
+
+<tr>
+<td class="org-left">133Cs 12+</td>
+<td class="org-right">0.02578</td>
+<td class="org-right">0.001</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Renee Klawitter</p>
+<p class="date">Created: 2015-08-10 Mon 17:55</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
