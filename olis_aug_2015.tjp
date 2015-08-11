@@ -91,7 +91,6 @@ task mpet_prep "MPET prep." {
   task accuracy "accuracy check" {
     depends !set
     purge allocate
-<<<<<<< HEAD
     allocate ag,je
     complete 100
     start 2015-08-10
@@ -101,22 +100,6 @@ task mpet_prep "MPET prep." {
     depends !accuracy
     purge allocate
     allocate ag,je
-=======
-    allocate ag,je,rk
-    complete 100
-    duration 7d
-  }
-  task rf "RF balancing" {
-    depends !compensation
-    purge allocate
-    allocate ag,je
-    effort 1.0h
-  }
-  task _10hz "10Hz check" {
-    depends !rf
-    purge allocate
-    allocate ag,je
->>>>>>> b8ae9082030e6667233dea3c20d17581c5ce5e06
     complete 100
     effort 8.0h
   }
@@ -145,15 +128,12 @@ task ebit_prep "EBIT" {
     purge allocate
     allocate rs,je,ag,rk
     complete 100
-<<<<<<< HEAD
     duration 1d
   }
   task capture "change how we capture beam in EBIT" {
     purge allocate
     allocate rk,rs,aak
     start 2015-08-11
-=======
->>>>>>> b8ae9082030e6667233dea3c20d17581c5ce5e06
     duration 1d
   }
   task charge "deciding on charge state(s) and optimizing breeding times" {
@@ -246,14 +226,7 @@ textreport report "Plan" {
   header '== beamtime preperation OLIS S1445 =='
 
   center -8<-
-<<<<<<< HEAD
     [#Summary Summary] | [#Plan Plan] | [#Resource_Allocation Resource Allocation]
-=======
-    [#Summary] | [#Plan Plan] | [#Resource_Allocation Resource Allocation]
-    ----
-    === Summary ===
-    <[report id="summary"]>
->>>>>>> b8ae9082030e6667233dea3c20d17581c5ce5e06
     ----
     === Plan ===
     <[report id="plan"]>
@@ -261,12 +234,6 @@ textreport report "Plan" {
     === Resources ===
     <[report id="resourceGraph"]>
   ->8-
-}
-
-textreport summary "" {
-  headline "Project Summary"
-  columns name, complete, start, end
-  width 1000
 }
 
 # A traditional Gantt chart with a project overview.
