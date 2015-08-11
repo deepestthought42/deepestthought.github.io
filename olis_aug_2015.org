@@ -468,7 +468,7 @@ CLOSED: [2015-08-10 Mon 17:14] SCHEDULED: <2015-07-30 Thu>
 ** TODO ask people to check vacuum
 SCHEDULED: <2015-08-11 Tue>
 
-** TODO look at trap short
+** TODO look at trap sho
 * work on the beamline
 ** changing charge states
 [2015-08-10 Mon 09:32]
