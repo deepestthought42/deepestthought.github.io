@@ -1,3 +1,6 @@
+* configuration                                                                           :noexport:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/org-style.css"/>
+
 * S1445 Summary
 The Q EC-value of 74Rb currently dominates the uncertainty of its ft-value, which
 is important for the extraction of the CKM matrix element V ud from superallowed
@@ -10,13 +13,95 @@ spectrometer. We intend to employ highly charged ions with charge states up to
 q = 27+, which will determine the Q EC-value with an uncertainty of 700 eV or
 below.
 
-* goal for OLIS beamtime
+* goal for OLIS beamtime                                                                  :noexport:
 - demonstrate ppb precision with beam from EBIT (under beamtime conditions)
 - since MPET vacuum conditions will prohibit using q=27+ anyway, do
   this with A/q = 7-10; in this way, everything we do has bearing on
   the following beamtimes; if everything works perfectly, we chnage
   settings and look at q=27+ during the beamtime (that should take an
   hour to do)
+* goals agreed upon during 7/30 meeting
+- set up EBIT and tune of HCI into MPET around q=10+ which fits best
+  to the m/q of later online beamtimes this summer [estimated time 3-4
+  days]
+- accuracy check of MPET with these HCI to the level needed for the
+  beamtimes this summer.
+
+  Given that the required accuracy for later beamtime is modest and based
+  upon Aaron’s MPET performance estimate, it is likely that the MPET will
+  already now meet these requirements.
+  
+  If the required accuracy cannot be met, then a compensation is required
+  [estimated time: 1 week]; hence, this implies that with the exception
+  of the Kr-RFQ test, the OLIS beamtime can probably not be used to push
+  the HCI program forward. We would need to discuss what to do, whether
+  shifts can be returned, etc.
+  
+  If the required accuracy is confirmed, no compensation is required for
+  this summer and we proceed towards the OLIS beamtime (see 3)
+  
+
+- in one or two steps increase breeding time and tune to MPET towards
+  Rb27+ [estimated time 3-4 days]
+
+  We should go as high in charge state as possible until a tune for
+  Rb27+ is obtained or the OLIS beamtime starts- whatever comes first
+
+** Goals during the beamtime itself:
+
+- recording of nice resonances of HCI (ideally Rb and Kr at the max.
+  charge state obtained during the preparations ) with increasing
+  excitation times (5 ms, 10 ms, 20 ms, 30 ms, …) until the charge
+  exchange in MPET destroys the resonance entirely
+ 
+  From this data, we will make plots of:
+
+  + achieved precision versus Trf
+
+  + number of surviving HCIs / H2+ versus Trf
+
+  This will already teach us the best Trf (i.e. leading to the highest
+  precision) given the current vacuum conditions in MPET.
+
+- in this best Trf, we would like to see the effect of evaporative
+  cooling (quality of resonance, TOF spread for trapped ions without
+  excitation). Hence, data with and without evaporative cooling should
+  be taken. Again this should lead to a nice comparative plot.
+
+- investigation of EBIT charge state efficiencies and whether the
+  threshold charge breeding can be observed with this long breeding
+  times. [I understand that Renee would like to investigate this
+  already during the preparations].
+
+- investigation how difficult it is to get Kr through the RFQ
+
+- start a mass measurement of Rb27+ vs Kr?+ (maybe even a triangle
+  85Rb27+,87Rb27+ and Kr ??) and see how far we get until the end of
+  the beamtime.
+
+Once again, this beamtime should be used to test and advance the HCI
+program at and beyond its current limit. It is a true experiment and
+not a measurement. So, it is very different to a ‘normal’ online
+beamtime.
+
+If we indeed manage to perform an accurate measurement at q=27+ at the
+ppb level, this would be amazing- and I send two bottles of champagne
+as promised ;-)
+
+However, this is beyond the basic expectation and if it cannot
+achieved, I won’t consider this beamtime as a failure. Quite the
+opposite, indeed. Sorry that I failed to communicate this before.
+
+The success of this beamtime is defined as
+
++ pushing the limits what is currently possible with HCI and
+
++ demonstrating the answers to those questions which we do currently
+  not have definite answers for but are important to decide on the
+  path of the future HCI strategy. As we have seen during today’s
+  discussion there are quite a few of those…
+
+
 
 * beamtime preperation OLIS S1445                                                         :taskjuggler_project:
 :PROPERTIES:
@@ -61,7 +146,8 @@ CLOSED: [2015-08-10 Mon 16:41]
 :allocate: rk,rs
 :duration: 2h
 :END:
-*** WAITING compensation
+*** CANCELED compensation
+CLOSED: [2015-08-10 Mon 16:49]
 :PROPERTIES:
 :allocate: ag,je,rk
 :duration: 7d
@@ -101,6 +187,20 @@ CLOSED: [2015-08-10 Mon 16:42]
 :task_id:  beam
 :BLOCKER:  kick
 :END:
+*** TODO change how we capture beam in EBIT
+:PROPERTIES:
+:allocate: rk,rs,aak
+:END:
+ since efficiency capturing is bad right now we need to change the
+ capturing scheme:
+
+ - instead of pulsing up with DT3, I will try to pulse down the beam
+   with DT4 while simultaneously switching DT3 up, then ramp up DT4
+   slowly and release with DT3 as before
+ - releasing the beam with the same bias on the DTS should ensure that
+   we have the same beam properties on extraction and can reuse the
+   tune we have right now
+
 *** deciding on charge state(s) and optimizing breeding times
 :PROPERTIES:
 :allocate: rs,rk
@@ -136,7 +236,8 @@ CLOSED: [2015-08-10 Mon 16:42]
 :start: 2015-08-04
 :end:    2015-08-04
 :END:      
-*** TODO calculating frequencies
+*** DONE calculating frequencies
+CLOSED: [2015-08-10 Mon 16:42]
 :PROPERTIES:
 :allocate: bk
 :task_id:  freq
@@ -184,7 +285,7 @@ CLOSED: [2015-08-10 Mon 16:42]
 :allocate: aak
 :effort:   3.5d
 :END:
-* People                              :taskjuggler_resource:
+* People                                                                                  :taskjuggler_resource:noexport:
 :PROPERTIES:
 :COLUMNS:  %4resource_id %20ITEM(Name) %20shifts %20phone(Phone number / local) %20mail(Mailing adress) %100workinghours(Availibility)
 :END:
@@ -325,12 +426,12 @@ CLOSED: [2015-08-10 Mon 16:42]
 | rs          | *** Ruben                       |                            | / 7551               |                      |                        |
 | uc          | *** Usman                       |                            | 778-968-4144 / 6454  | usman@triumf.ca      |                        |
 #+END:
-* constraints for schedule
+* constraints for schedule                                                                :noexport:
 ** Dan and Brad; Brad's wedding
 ** Brian, not on the 14th in the evening
 * todos
-** TODO create schedule
-SCHEDULED: <2015-07-30 Thu>
+** DONE create schedule
+CLOSED: [2015-08-10 Mon 17:14] SCHEDULED: <2015-07-30 Thu>
 *** who has constraints ? 
 - brad won't be there at all
 - Dan is away 14th to 16th
@@ -362,13 +463,12 @@ SCHEDULED: <2015-07-30 Thu>
 | Kai         | Documentation                      |
 | Andrew      | Documentation, Analysis            |
 
-* meeting 150804
-** Qs
-- do we have a date for the meeting with collin / BPR
-- 
-* changing charge states
+* work on the beamline
+** changing charge states
 [2015-08-10 Mon 09:32]
 - reestablished trapping very easily and got a nice resonance (~18% ToF)
+  #+attr_html: :width 800px
+  [[./work on the beamline/Screenshot%20from%202015-08-10%2010:45:29_2015-08-10_17:25:48.png]]
 - to be able to do an accuracy check we need to have more than 133Cs
   13+; so get 14+ in the trap. While doing that trying to get more BNG
   times to be able to extrapolate
@@ -376,7 +476,7 @@ SCHEDULED: <2015-07-30 Thu>
   not too bad
 - doing PB5 scan 17850 - 17900; 17875 -> 17875
 
-** BNG / capture timings
+*** BNG / capture timings
 | species   | BNG offset | BNG  width | PLT delay | capture | rate w/BNG [/shot] |
 |-----------+------------+------------+-----------+---------+--------------------|
 | 133Cs 13+ |    0.02472 |     0.0008 |     0.039 |  0.0399 |                 .5 |
